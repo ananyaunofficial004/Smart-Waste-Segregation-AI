@@ -111,7 +111,6 @@ leaderboard = leaderboard.slice(0,5);
 
 localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
 
-displayLeaderboard();
 
 }
 
