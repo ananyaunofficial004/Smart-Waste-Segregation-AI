@@ -119,8 +119,11 @@ function displayLeaderboard(){
 
 let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
 
+const list = document.getElementById("leaderboard");
 
+if(!list) return;
 
+list.innerHTML="";
 
 leaderboard.forEach(player=>{
 
@@ -133,4 +136,5 @@ list.appendChild(li);
 });
 
 }
+
 
