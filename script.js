@@ -134,3 +134,4 @@ list.appendChild(li);
 });
 
 }
+displayLeaderboard();
