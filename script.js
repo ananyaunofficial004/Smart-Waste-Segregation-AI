@@ -56,6 +56,9 @@ document.getElementById("score").innerHTML = score;
 document.getElementById("result").innerHTML =
 "Detected Waste: " + detected +
 "<br>♻ Tip: Clean recyclable items before disposal.";
+  
+  document.getElementById("result").innerHTML +=
+"<br>🌍 Proper waste segregation helps improve recycling efficiency.";
 
 detectedAlready = true;
 
