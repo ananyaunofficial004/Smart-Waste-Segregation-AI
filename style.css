@@ -6,14 +6,33 @@ text-align:center;
 }
 
 .navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
 background:#020617;
-padding:20px;
+padding:20px 60px;
 }
 
-.navbar a{
-margin-left:20px;
-color:white;
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#38bdf8;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+.nav-links a{
 text-decoration:none;
+color:white;
+font-weight:600;
+}
+
+.nav-links a:hover{
+color:#22c55e;
 }
 
 .hero{
