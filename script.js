@@ -1,6 +1,19 @@
 let score = 0;
 let detectedAlready = false;
 
+document.getElementById("imageUpload").addEventListener("change", function(e){
+
+const file = e.target.files[0];
+
+detectedAlready = false;
+document.getElementById("result").innerHTML = "";
+
+// image preview
+if(file){
+document.getElementById("preview").src = URL.createObjectURL(file);
+}
+
+});
 
 function detectWaste(){
 
@@ -47,23 +60,13 @@ document.getElementById("result").innerHTML =
 detectedAlready = true;
 
 }
-document.getElementById("imageUpload").addEventListener("change", function(e){
 
-const file = e.target.files[0];
-
-document.getElementById("preview").src = URL.createObjectURL(file);
-
-});
 function resetGame(){
 
 score = 0;
+detectedAlready = false;
 
 document.getElementById("score").innerHTML = score;
-
 document.getElementById("result").innerHTML = "";
 
 }
-document.getElementById("imageUpload").addEventListener("change", function(){
-detectedAlready = false;
-document.getElementById("result").innerHTML = "";
-});
