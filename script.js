@@ -1,6 +1,13 @@
 let score = 0;
 let detectedAlready = false;
 
+const facts = [
+"Plastic can take up to 400 years to decompose.",
+"Recycling one aluminum can saves energy for 3 hours of TV.",
+"Paper recycling helps reduce deforestation.",
+"Glass can be recycled infinitely without losing quality."
+];
+
 document.getElementById("imageUpload").addEventListener("change", function(e){
 
 const file = e.target.files[0];
@@ -11,6 +18,7 @@ document.getElementById("result").innerHTML = "";
 // image preview
 if(file){
 document.getElementById("preview").src = URL.createObjectURL(file);
+document.getElementById("preview").style.border = "4px solid #22c55e";
 }
 
 });
@@ -53,12 +61,19 @@ score += 10;
 
 document.getElementById("score").innerHTML = score;
 
+// random fact
+let fact = facts[Math.floor(Math.random()*facts.length)];
+
 document.getElementById("result").innerHTML =
 "Detected Waste: " + detected +
-"<br>♻ Tip: Clean recyclable items before disposal.";
-  
-  document.getElementById("result").innerHTML +=
-"<br>🌍 Proper waste segregation helps improve recycling efficiency.";
+"<br>♻ Tip: Clean recyclable items before disposal." +
+"<br>🌍 Fact: " + fact;
+
+// champion message
+if(score >= 50){
+document.getElementById("result").innerHTML +=
+"<br>🏆 Recycling Champion! Keep helping the planet.";
+}
 
 detectedAlready = true;
 
