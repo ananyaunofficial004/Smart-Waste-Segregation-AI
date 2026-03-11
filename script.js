@@ -91,6 +91,7 @@ detectedAlready = false;
 
 document.getElementById("score").innerHTML = score;
 document.getElementById("result").innerHTML = "";
+  updateLeaderboard();
 
 }
 function updateLeaderboard(){
