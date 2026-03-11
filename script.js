@@ -46,3 +46,10 @@ document.getElementById("result").innerHTML =
 detectedAlready = true;
 
 }
+document.getElementById("imageUpload").addEventListener("change", function(e){
+
+const file = e.target.files[0];
+
+document.getElementById("preview").src = URL.createObjectURL(file);
+
+});
