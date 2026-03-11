@@ -7,16 +7,26 @@ document.getElementById("result").innerHTML="Please upload an image";
 return;
 }
 
-const wastes = [
-"Plastic Waste → Blue Recycling Bin",
-"Organic Waste → Green Bin",
-"Metal Waste → Yellow Bin",
-"Paper Waste → White Bin"
-];
+const fileName = input.files[0].name.toLowerCase();
 
-const result = wastes[Math.floor(Math.random()*wastes.length)];
-
+if(fileName.includes("plastic")){
 document.getElementById("result").innerHTML =
-"Detected Waste: " + result;
+"Detected Waste: Plastic → Blue Recycling Bin";
+}
+
+else if(fileName.includes("banana") || fileName.includes("food")){
+document.getElementById("result").innerHTML =
+"Detected Waste: Organic → Green Bin";
+}
+
+else if(fileName.includes("paper")){
+document.getElementById("result").innerHTML =
+"Detected Waste: Paper → White Bin";
+}
+
+else{
+document.getElementById("result").innerHTML =
+"Detected Waste: Metal → Yellow Bin";
+}
 
 }
