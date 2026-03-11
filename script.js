@@ -63,3 +63,7 @@ document.getElementById("score").innerHTML = score;
 document.getElementById("result").innerHTML = "";
 
 }
+document.getElementById("imageUpload").addEventListener("change", function(){
+detectedAlready = false;
+document.getElementById("result").innerHTML = "";
+});
