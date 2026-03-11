@@ -11,29 +11,24 @@ return;
 const fileName = input.files[0].name.toLowerCase();
 
 let detected = "";
-let correct = false;
 
 if(fileName.includes("plastic")){
 detected = "Plastic → Blue Recycling Bin";
-correct = true;
+score += 10;
 }
 
 else if(fileName.includes("banana") || fileName.includes("food")){
 detected = "Organic → Green Bin";
-correct = true;
+score += 10;
 }
 
 else if(fileName.includes("paper")){
 detected = "Paper → White Bin";
-correct = true;
+score += 10;
 }
 
 else{
 detected = "Metal → Yellow Bin";
-correct = true;
-}
-
-if(correct){
 score += 10;
 }
 
@@ -42,6 +37,6 @@ document.getElementById("score").innerHTML = score;
 document.getElementById("result").innerHTML =
 "Detected Waste: " + detected;
 
+input.value = "";   // ⭐ important fix
+
 }
-
-
