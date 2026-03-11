@@ -93,3 +93,43 @@ document.getElementById("score").innerHTML = score;
 document.getElementById("result").innerHTML = "";
 
 }
+function updateLeaderboard(){
+
+let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
+
+const player = localStorage.getItem("playerName");
+
+leaderboard.push({
+name: player,
+score: score
+});
+
+leaderboard.sort((a,b)=>b.score-a.score);
+
+leaderboard = leaderboard.slice(0,5);
+
+localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
+
+displayLeaderboard();
+
+}
+
+function displayLeaderboard(){
+
+let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
+
+const list = document.getElementById("leaderboard");
+
+list.innerHTML="";
+
+leaderboard.forEach(player=>{
+
+const li=document.createElement("li");
+
+li.innerHTML=player.name+" — "+player.score;
+
+list.appendChild(li);
+
+});
+
+}
