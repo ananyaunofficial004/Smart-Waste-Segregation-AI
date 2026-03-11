@@ -41,7 +41,8 @@ score += 10;
 document.getElementById("score").innerHTML = score;
 
 document.getElementById("result").innerHTML =
-"Detected Waste: " + detected;
+"Detected Waste: " + detected +
+"<br>♻ Tip: Clean recyclable items before disposal.";
 
 detectedAlready = true;
 
@@ -53,3 +54,12 @@ const file = e.target.files[0];
 document.getElementById("preview").src = URL.createObjectURL(file);
 
 });
+function resetGame(){
+
+score = 0;
+
+document.getElementById("score").innerHTML = score;
+
+document.getElementById("result").innerHTML = "";
+
+}
