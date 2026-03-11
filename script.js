@@ -1,3 +1,8 @@
+const player = localStorage.getItem("playerName");
+
+if(player){
+document.getElementById("playerName").innerHTML = player;
+}
 let score = 0;
 let detectedAlready = false;
 
