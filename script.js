@@ -1,3 +1,4 @@
+let score = 0;
 function detectWaste(){
 
 const input = document.getElementById("imageUpload");
