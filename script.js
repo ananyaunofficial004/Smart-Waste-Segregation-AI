@@ -10,24 +10,38 @@ return;
 
 const fileName = input.files[0].name.toLowerCase();
 
+let detected = "";
+let correct = false;
+
 if(fileName.includes("plastic")){
-document.getElementById("result").innerHTML =
-"Detected Waste: Plastic → Blue Recycling Bin";
+detected = "Plastic → Blue Recycling Bin";
+correct = true;
 }
 
 else if(fileName.includes("banana") || fileName.includes("food")){
-document.getElementById("result").innerHTML =
-"Detected Waste: Organic → Green Bin";
+detected = "Organic → Green Bin";
+correct = true;
 }
 
 else if(fileName.includes("paper")){
-document.getElementById("result").innerHTML =
-"Detected Waste: Paper → White Bin";
+detected = "Paper → White Bin";
+correct = true;
 }
 
 else{
-document.getElementById("result").innerHTML =
-"Detected Waste: Metal → Yellow Bin";
+detected = "Metal → Yellow Bin";
+correct = true;
 }
 
+if(correct){
+score += 10;
 }
+
+document.getElementById("score").innerHTML = score;
+
+document.getElementById("result").innerHTML =
+"Detected Waste: " + detected;
+
+}
+
+
