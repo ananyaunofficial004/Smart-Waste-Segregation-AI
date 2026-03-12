@@ -54,6 +54,12 @@ font-size:16px;
 cursor:pointer;
 border-radius:6px;
 }
+#result{
+background:#020617;
+padding:20px;
+border-radius:10px;
+margin-top:20px;
+}
 
 button:hover{
 background:#16a34a;
